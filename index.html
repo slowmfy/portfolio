@@ -2,158 +2,256 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio - CHEIKH Mohamed Amine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberCommandes – Planification de la journée</title>
   <style>
-    /* Base */
-    body {
+    * {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #F5F6FA; /* light gray background */
-      color: #1F3B5F; /* dark navy text */
-    }
-
-    /* Header */
-    header {
-      background: #1F3B5F; /* dark navy */
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-      color: #DDE2E8; /* soft gray */
-    }
-
-    /* Profile image */
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid #3498DB; /* accent blue border */
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    /* Navigation */
-    nav {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #1F3B5F;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #3498DB;
-    }
-
-    /* Sections */
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    h2 {
-      border-bottom: 2px solid #3498DB;
-      padding-bottom: 0.3rem;
-      color: #1F3B5F;
-    }
-    ul {
-      list-style: none;
       padding: 0;
-    }
-    ul li {
-      margin: 0.5rem 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
     }
 
-    /* Links in sections */
-    section a {
-      color: #3498DB;
-      text-decoration: none;
+    body {
+      background: #f3f4f6;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ---- SIDEBAR ---- */
+    .sidebar {
+      width: 260px;
+      background: #1e293b;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 22px;
       font-weight: bold;
     }
-    section a:hover {
-      text-decoration: underline;
+
+    .menu a {
+      display: block;
+      padding: 12px;
+      color: #cbd5e1;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.2s;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #1F3B5F;
+    .menu a:hover,
+    .menu a.active {
+      background: #334155;
       color: white;
-      margin-top: 2rem;
+    }
+
+    /* ---- MAIN ---- */
+    .main {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    /* ---- GRID ---- */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .info {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #374151;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #1e40af;
+    }
+
+    .btn-outline {
+      background: white;
+      border: 1px solid #d1d5db;
+      color: #374151;
+    }
+    .btn-outline:hover {
+      background: #f3f4f6;
+    }
+
+    /* ---- MAP ---- */
+    .map {
+      width: 100%;
+      height: 380px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+      position: relative;
+      border: 1px solid #cbd5e1;
+    }
+
+    .map-title {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: white;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .marker {
+      width: 22px;
+      height: 22px;
+      background: #1d4ed8;
+      border-radius: 50%;
+      color: white;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      border: 2px solid white;
+    }
+
+    .marker.depot {
+      background: #059669;
+    }
+
+    .stats-box {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(17, 24, 39, 0.85);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="aminepng.PNG" alt="Photo de Mohamed Amine Cheikh" class="profile-pic">
-    <h1>Mohamed Amine Cheikh</h1>
-    <p>Étudiant en Informatique | Développeur Backend</p>
-  </header>
 
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#skills">Compétences</a>
-    <a href="#projects">Projets</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">CyberCommandes</div>
 
-  <section id="about">
-    <h2>À propos</h2>
-    <p>Je suis étudiant en informatique à l’Université Grenoble Alpes. Passionné par le développement backend, les systèmes d’information et les technologies web, je recherche un stage pour acquérir de l’expérience professionnelle et contribuer à des projets concrets.</p>
-  </section>
+    <div class="menu">
+      <a class="active">📦 Planification du lendemain</a>
+      <a>🚚 Tournées en cours</a>
+      <a>📊 Statistiques</a>
+      <a>👤 Profil planificateur</a>
+      <a href="login.html">🔒 Déconnexion</a>
+    </div>
+  </div>
 
-  <section id="skills">
-    <h2>Compétences</h2>
-    <ul>
-      <li><strong>Langages :</strong> C, Java, Assembleur</li>
-      <li><strong>Web :</strong> HTML, CSS, JavaScript, Django (Python)</li>
-      <li><strong>Bases de données :</strong> MySQL</li>
-      <li><strong>Autres :</strong> XML, Programmation Orientée Objet</li>
-    </ul>
-  </section>
+  <!-- Main content -->
+  <div class="main">
 
-  <section id="projects">
-    <h2>Projets</h2>
-    <ul>
-      <li>
-        <strong>Développement et refonte du site web universitaire</strong> —
-        <a href="https://github.com/ranidzkellou/Projet-DevWeb2" target="_blank">Voir le projet</a>
-      </li>
-      <li>
-        <strong>Développement d’un site qui calcule la zakat des entreprises</strong> —
-        <a href="https://github.com/6laza/Awkaf" target="_blank">Voir le projet</a>
-      </li>
-      <li>
-        <strong>Application Java de connexion peer-to-peer</strong> —
-        <a href="https://github.com/slowmfy/Peer2peer-java-" target="_blank">Voir le projet</a>
-      </li>
-    </ul>
-  </section>
+    <h1>Planifier la journée du lendemain</h1>
+    <div class="subtitle">Optimisation de la tournée pour minimiser la distance.</div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email : <a href="mailto:Mohamed-Amine.Cheikh@etu.univ-grenoble-alpes.fr">Mohamed-Amine.Cheikh@etu.univ-grenoble-alpes.fr</a></p>
-    <p>LinkedIn : <a href="https://www.linkedin.com/in/mohamed-amine-cheikh-54395b296" target="_blank">Mon profil LinkedIn</a></p>
-    <p>GitHub : <a href="https://github.com/Slowmfy" target="_blank">Cheikh Mohamed Amine</a></p>
-  </section>
+    <div class="grid">
 
-  <footer>
-    <p>&copy; 2025 Cheikh Mohamed Amine - Portfolio</p>
-  </footer>
+      <!-- Bloc Livraisons -->
+      <div class="card">
+        <h2>Livraisons du lendemain</h2>
+        <p class="info">Nombre total de livraisons : <strong>10</strong></p>
+
+        <button class="btn btn-outline">Voir la liste complète</button>
+      </div>
+
+      <!-- Bloc optimisation -->
+      <div class="card">
+        <h2>Optimisation du trajet</h2>
+        <p class="info">
+          Le système peut générer une tournée minimisant la distance totale parcourue.
+        </p>
+
+        <button class="btn btn-primary">Générer l’itinéraire optimal</button>
+      </div>
+
+    </div>
+
+    <!-- Bouton Planifier la journée -->
+    <div class="card" style="margin-top: 25px;">
+      <h2>Action rapide</h2>
+      <p class="info">Lancer la planification complète de la journée du lendemain.</p>
+
+      <button class="btn btn-primary">📅 Planifier la journée</button>
+    </div>
+
+    <!-- Carte -->
+    <div class="card" style="margin-top: 25px;">
+      <h2>Carte – Itinéraire proposé</h2>
+
+      <div class="map">
+        <div class="map-title">Tournée optimisée</div>
+
+        <!-- Dépôt -->
+        <div class="marker depot" style="top: 65%; left: 20%;">D</div>
+
+        <!-- 10 livraisons -->
+        <div class="marker" style="top: 15%; left: 30%;">1</div>
+        <div class="marker" style="top: 30%; left: 50%;">2</div>
+        <div class="marker" style="top: 10%; left: 70%;">3</div>
+        <div class="marker" style="top: 40%; left: 80%;">4</div>
+        <div class="marker" style="top: 65%; left: 75%;">5</div>
+        <div class="marker" style="top: 78%; left: 60%;">6</div>
+        <div class="marker" style="top: 70%; left: 40%;">7</div>
+        <div class="marker" style="top: 50%; left: 25%;">8</div>
+        <div class="marker" style="top: 32%; left: 15%;">9</div>
+        <div class="marker" style="top: 8%; left: 45%;">10</div>
+
+        <div class="stats-box">
+          Distance totale : ~XX km<br>
+          Durée estimée : ~YY minutes
+        </div>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>

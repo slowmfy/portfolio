@@ -2,111 +2,158 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>CyberCommandes – Connexion</title>
+  <title>Portfolio - CHEIKH Mohamed Amine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Base */
     body {
       margin: 0;
-      background: #f1f5f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: "Segoe UI", sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #F5F6FA; /* light gray background */
+      color: #1F3B5F; /* dark navy text */
     }
 
-    .login-box {
-      width: 380px;
-      background: white;
-      padding: 35px;
-      border-radius: 12px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #1e293b;
-      font-size: 24px;
-    }
-
-    label {
-      font-size: 14px;
-      font-weight: 600;
-      color: #334155;
-    }
-
-    input {
-      width: 100%;
-      margin-top: 6px;
-      margin-bottom: 18px;
-      padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 15px;
-    }
-
-    .btn-login {
-      width: 100%;
-      padding: 12px;
-      background: #2563eb;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
+    /* Header */
+    header {
+      background: #1F3B5F; /* dark navy */
       color: white;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn-login:hover {
-      background: #1e40af;
-    }
-
-    .footer-text {
+      padding: 2rem 1rem;
       text-align: center;
-      margin-top: 15px;
-      font-size: 13px;
-      color: #64748b;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      color: #DDE2E8; /* soft gray */
     }
 
-    .logo {
+    /* Profile image */
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #3498DB; /* accent blue border */
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    /* Navigation */
+    nav {
       text-align: center;
-      margin-bottom: 20px;
-      font-size: 22px;
+      margin: 1rem 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #1F3B5F;
       font-weight: bold;
-      color: #0f172a;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #3498DB;
+    }
+
+    /* Sections */
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h2 {
+      border-bottom: 2px solid #3498DB;
+      padding-bottom: 0.3rem;
+      color: #1F3B5F;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    /* Links in sections */
+    section a {
+      color: #3498DB;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1F3B5F;
+      color: white;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="aminepng.PNG" alt="Photo de Mohamed Amine Cheikh" class="profile-pic">
+    <h1>Mohamed Amine Cheikh</h1>
+    <p>Étudiant en Informatique | Développeur Backend</p>
+  </header>
 
-  <div class="login-box">
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#skills">Compétences</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="logo">CyberCommandes</div>
+  <section id="about">
+    <h2>À propos</h2>
+    <p>Je suis étudiant en informatique à l’Université Grenoble Alpes. Passionné par le développement backend, les systèmes d’information et les technologies web, je recherche un stage pour acquérir de l’expérience professionnelle et contribuer à des projets concrets.</p>
+  </section>
 
-    <h1>Connexion</h1>
+  <section id="skills">
+    <h2>Compétences</h2>
+    <ul>
+      <li><strong>Langages :</strong> C, Java, Assembleur</li>
+      <li><strong>Web :</strong> HTML, CSS, JavaScript, Django (Python)</li>
+      <li><strong>Bases de données :</strong> MySQL</li>
+      <li><strong>Autres :</strong> XML, Programmation Orientée Objet</li>
+    </ul>
+  </section>
 
-    <form action="planificateur.html" method="GET">
-      <label for="email">Identifiant</label>
-      <input type="text" id="email" name="email" placeholder="planificateur@cybercommandes.fr" required>
+  <section id="projects">
+    <h2>Projets</h2>
+    <ul>
+      <li>
+        <strong>Développement et refonte du site web universitaire</strong> —
+        <a href="https://github.com/ranidzkellou/Projet-DevWeb2" target="_blank">Voir le projet</a>
+      </li>
+      <li>
+        <strong>Développement d’un site qui calcule la zakat des entreprises</strong> —
+        <a href="https://github.com/6laza/Awkaf" target="_blank">Voir le projet</a>
+      </li>
+      <li>
+        <strong>Application Java de connexion peer-to-peer</strong> —
+        <a href="https://github.com/slowmfy/Peer2peer-java-" target="_blank">Voir le projet</a>
+      </li>
+    </ul>
+  </section>
 
-      <label for="password">Mot de passe</label>
-      <input type="password" id="password" name="password" placeholder="••••••••" required>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:Mohamed-Amine.Cheikh@etu.univ-grenoble-alpes.fr">Mohamed-Amine.Cheikh@etu.univ-grenoble-alpes.fr</a></p>
+    <p>LinkedIn : <a href="https://www.linkedin.com/in/mohamed-amine-cheikh-54395b296" target="_blank">Mon profil LinkedIn</a></p>
+    <p>GitHub : <a href="https://github.com/Slowmfy" target="_blank">Cheikh Mohamed Amine</a></p>
+  </section>
 
-      <button class="btn-login">Se connecter</button>
-    </form>
-
-    <div class="footer-text">
-      Système de gestion des tournées<br>
-      © 2025 CyberCommandes
-    </div>
-
-  </div>
-
+  <footer>
+    <p>&copy; 2025 Cheikh Mohamed Amine - Portfolio</p>
+  </footer>
 </body>
 </html>

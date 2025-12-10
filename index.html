@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>CyberCommandes – Liste des livraisons</title>
+  <title>CyberCommandes – Livraison</title>
   <style>
     body {
       margin: 0;
@@ -47,29 +47,22 @@
       margin-bottom: 10px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .card {
       background: white;
+      padding: 20px;
       border-radius: 8px;
-      overflow: hidden;
       box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
     }
 
-    th, td {
-      padding: 14px;
-      border-bottom: 1px solid #e5e7eb;
-      text-align: left;
+    .info {
       font-size: 15px;
-    }
-
-    th {
-      background: #f1f5f9;
-      font-weight: 600;
+      margin-bottom: 8px;
+      color: #374151;
     }
 
     .btn {
-      padding: 8px 14px;
+      padding: 10px 16px;
       border-radius: 6px;
       font-size: 14px;
       cursor: pointer;
@@ -86,11 +79,6 @@
       border: 1px solid #cbd5e1;
     }
 
-    .btn-sm {
-      padding: 6px 10px;
-      font-size: 13px;
-    }
-
   </style>
 </head>
 <body>
@@ -100,48 +88,30 @@
 
     <div class="menu">
       <a href="planificateur.html">Planification</a>
-      <a class="active">Liste des livraisons</a>
+      <a href="livraisons.html" class="active">Liste des livraisons</a>
       <a>Statistiques</a>
       <a href="login.html">Déconnexion</a>
     </div>
   </div>
 
   <div class="main">
-    <h1>Liste des livraisons du lendemain</h1>
 
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Adresse</th>
-        <th>Client</th>
-        <th>Fenetre horaire</th>
-        <th>Actions</th>
-      </tr>
+    <h1>Détails de la livraison</h1>
 
-      <tr>
-        <td>1</td>
-        <td>12 Rue des Lilas, Grenoble</td>
-        <td>Client A</td>
-        <td>08h00 - 12h00</td>
-        <td>
-          <button class="btn btn-sm btn-primary" onclick="location.href='livraison.html?id=1'">Voir</button>
-          <button class="btn btn-sm btn-outline">Retirer</button>
-        </td>
-      </tr>
+    <div class="card">
+      <p class="info"><strong>ID :</strong> 1</p>
+      <p class="info"><strong>Adresse :</strong> 12 Rue des Lilas, Grenoble</p>
+      <p class="info"><strong>Client :</strong> Client A</p>
+      <p class="info"><strong>Fenêtre horaire :</strong> 08h00 - 12h00</p>
+      <p class="info"><strong>Etat :</strong> Non livrée</p>
+    </div>
 
-      <tr>
-        <td>2</td>
-        <td>95 Avenue de Lyon, Grenoble</td>
-        <td>Client B</td>
-        <td>14h00 - 18h00</td>
-        <td>
-          <button class="btn btn-sm btn-primary" onclick="location.href='livraison.html?id=2'">Voir</button>
-          <button class="btn btn-sm btn-outline">Retirer</button>
-        </td>
-      </tr>
+    <div class="card">
+      <button class="btn btn-primary">Ajouter à la tournée</button>
+      <button class="btn btn-outline">Retirer</button>
+      <button class="btn btn-outline">Afficher sur la carte</button>
+    </div>
 
-      <!-- Tu peux dupliquer pour 10 livraisons -->
-    </table>
   </div>
 
 </body>
